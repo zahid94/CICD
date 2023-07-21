@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33815.320
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CICDAPI", "CICDAPI\CICDAPI.csproj", "{8EE201FD-7528-4DB8-BD08-DF29FAEFF101}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8EE201FD-7528-4DB8-BD08-DF29FAEFF101}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EE201FD-7528-4DB8-BD08-DF29FAEFF101}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EE201FD-7528-4DB8-BD08-DF29FAEFF101}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EE201FD-7528-4DB8-BD08-DF29FAEFF101}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {45D067EC-6388-4C63-B387-7B9FB7042366}
+	EndGlobalSection
+EndGlobal
