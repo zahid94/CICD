@@ -29,6 +29,8 @@ jobs:
         with:
           server: 103.108.146.179
           port: 1433
+          username: hannan
+          password: datavanced123!
           exclude: |
             /.git*
             /.git*/
