@@ -35,4 +35,4 @@ jobs:
             /.git*
             /.git*/
             /supportboard/**
-          local-dir: ./PassionCareFTP
+          local-dir: ./PassionCareFTP/
