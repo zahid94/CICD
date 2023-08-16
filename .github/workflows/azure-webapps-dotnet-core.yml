@@ -24,3 +24,13 @@ jobs:
         
       - name: Publish with dotnet
         run: dotnet publish --configuration Release -o './Publish'
+      - name: file transfer to server
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: 103.108.146.179
+          port: 1433
+          exclude: |
+            /.git*
+            /.git*/
+            /supportboard/**
+          local-dir: ./PassionCareFTP
