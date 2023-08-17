@@ -28,8 +28,8 @@ jobs:
       - name: Deploy to IIS
         run: |
           Import-Module WebAdministration
-          $siteName = "CICD" # Change to your IIS site name
-          $publishDir = "./"
+          $siteName = "FTP_Test" # Change to your IIS site name
+          $publishDir = "./FTP_Folder"
           $sitePath = "IIS:\Sites\$siteName"
   
           # Stop the site
