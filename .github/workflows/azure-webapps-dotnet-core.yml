@@ -25,21 +25,16 @@ jobs:
       - name: Publish with dotnet
         run: dotnet publish --configuration Release -o './Publish'
 
-      - name: Deploy to IIS
-        run: |
-          Import-Module Add-PSSnapin WebAdministration -SkipEditionCheck
-          $siteName = "FTP_Folder" # Change to your IIS site name
-          $publishDir = "./FTP_Folder"
-          $sitePath = "IIS:\Sites\$siteName"
-  
-          # Stop the site
-          Stop-WebSite -Name $siteName
-  
-          # Remove existing content
-          Remove-Item "$sitePath\*" -Recurse
-  
-          # Copy new content
-          Copy-Item "$publishDir\*" "$sitePath" -Recurse
-  
-          # Start the site
-          Start-WebSite -Name $siteName
+      - name: 📂 Sync files
+        uses: SamKirkland/FTP-Deploy-Action@4.2.0
+        with:
+          server: 103.108.146.179
+          port : 23
+          username: ftpuser
+          password: datavanced123!
+          exclude: |
+            /.git*
+            /.git*/
+            /supportboard/**
+          local-dir: ./
+          server-dir: ./
