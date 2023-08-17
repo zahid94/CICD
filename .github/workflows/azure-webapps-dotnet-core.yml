@@ -27,8 +27,8 @@ jobs:
 
       - name: Deploy to IIS
         run: |
-          Import-Module WebAdministration
-          $siteName = "FTP_Test" # Change to your IIS site name
+          Import-Module -SkipEditionCheck
+          $siteName = "FTP_Folder" # Change to your IIS site name
           $publishDir = "./FTP_Folder"
           $sitePath = "IIS:\Sites\$siteName"
   
