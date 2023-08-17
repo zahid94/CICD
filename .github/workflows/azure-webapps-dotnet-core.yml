@@ -36,8 +36,8 @@ jobs:
             /.git*
             /.git*/
             /supportboard/**
-          local-dir: ./Local/
-          server-dir: ./Local/
+          local-dir: ./
+          server-dir: ./
           
       - name : deploy and restart site
         run: | 
