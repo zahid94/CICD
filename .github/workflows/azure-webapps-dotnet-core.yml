@@ -41,16 +41,13 @@ jobs:
           server-dir: ./
           
       - name : deploy and restart site
-        shell: pwsh
-        run: | 
-          Import-Module IISAdministration
+        run: |
           $siteName = "Release"
           $publishDir = "./Publish"
-          
           $sitePath = "IIS:\Sites\$siteName"
   
           # Stop the site
-          Stop-WebSite -Name $siteName
+          Invoke-Expression "Stop-WebSite -Name $siteName"
   
           # Remove existing content
           Remove-Item "$sitePath\*" -Recurse
@@ -59,4 +56,4 @@ jobs:
           Copy-Item "$publishDir\*" "$sitePath" -Recurse
   
           # Start the site
-          Start-WebSite -Name $siteName
+          Invoke-Expression "Start-WebSite -Name $siteName"
