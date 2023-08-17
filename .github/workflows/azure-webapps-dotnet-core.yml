@@ -37,13 +37,12 @@ jobs:
             /.git*/
             /supportboard/**
           local-dir: ./Local/
-          server-dir: ./
+          server-dir: ./Local/
           
       - name : deploy and restart site
         run: | 
           $siteName = "Release"
           $publishDir = "./Publish"
-
           
           $sitePath = "IIS:\Sites\$siteName"
   
