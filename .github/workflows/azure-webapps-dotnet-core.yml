@@ -24,15 +24,22 @@ jobs:
         
       - name: Publish with dotnet
         run: dotnet publish --configuration Release -o './Publish'
-      - name: file transfer to server
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
-        with:
-          server: 103.108.146.179
-          port: 22
-          username: hannan
-          password: datavanced123!
-          exclude: |
-            /.git*
-            /.git*/
-            /supportboard/**
-          local-dir: ./
+
+      - name: Deploy to IIS
+        run: |
+          Import-Module WebAdministration
+          $siteName = "CICD" # Change to your IIS site name
+          $publishDir = "./"
+          $sitePath = "IIS:\Sites\$siteName"
+  
+          # Stop the site
+          Stop-WebSite -Name $siteName
+  
+          # Remove existing content
+          Remove-Item "$sitePath\*" -Recurse
+  
+          # Copy new content
+          Copy-Item "$publishDir\*" "$sitePath" -Recurse
+  
+          # Start the site
+          Start-WebSite -Name $siteName
