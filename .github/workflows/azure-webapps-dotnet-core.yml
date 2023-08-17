@@ -10,7 +10,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-
+      - name: Perform a Pester test from the command-line
+        shell: pwsh
       - name: Set up .NET Core
         uses: actions/setup-dotnet@v2 
         with:
