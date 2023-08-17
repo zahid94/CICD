@@ -41,6 +41,7 @@ jobs:
           
       - name : deploy and restart site
         run: | 
+          Import-Module IISAdministration
           $siteName = "Release"
           $publishDir = "./Publish"
           
