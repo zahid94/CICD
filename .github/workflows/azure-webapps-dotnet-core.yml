@@ -28,7 +28,7 @@ jobs:
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: 103.108.146.179
-          port: 1433
+          port: 22
           username: hannan
           password: datavanced123!
           exclude: |
