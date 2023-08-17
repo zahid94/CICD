@@ -36,5 +36,25 @@ jobs:
             /.git*
             /.git*/
             /supportboard/**
-          local-dir: ./
+          local-dir: ./Local/
           server-dir: ./
+          
+      - name : deploy and restart site
+        run: | 
+          $siteName = "Release"
+          $publishDir = "./Publish"
+
+          
+          $sitePath = "IIS:\Sites\$siteName"
+  
+          # Stop the site
+          Stop-WebSite -Name $siteName
+  
+          # Remove existing content
+          Remove-Item "$sitePath\*" -Recurse
+  
+          # Copy new content
+          Copy-Item "$publishDir\*" "$sitePath" -Recurse
+  
+          # Start the site
+          Start-WebSite -Name $siteName
